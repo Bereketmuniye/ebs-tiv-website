@@ -1,0 +1,218 @@
+.container {
+    min-height: 100vh;
+    padding-top: 80px;
+}
+
+.hero {
+    background: var(--gradient-hero);
+    padding: var(--spacing-2xl) 0;
+    text-align: center;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.heroContent {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    margin-bottom: var(--spacing-sm);
+}
+
+.liveDot {
+    width: 20px;
+    height: 20px;
+    background: var(--color-red);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+}
+
+.videoSection {
+    max-width: 1400px;
+    margin: var(--spacing-2xl) auto;
+    padding: 0 var(--spacing-md);
+}
+
+.videoWrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-lg);
+}
+
+.videoPlayer {
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    border: 2px solid var(--glass-border);
+    box-shadow: var(--shadow-lg);
+}
+
+.playerPlaceholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    background: linear-gradient(135deg, var(--color-bg-secondary), var(--color-bg-tertiary));
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.playerPlaceholder:hover {
+    background: linear-gradient(135deg, var(--color-bg-tertiary), var(--color-bg-secondary));
+}
+
+.playerPlaceholder:hover .playIcon {
+    transform: scale(1.1);
+}
+
+.playIcon {
+    transition: transform var(--transition-normal);
+}
+
+.playerText {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.playerSubtext {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.infoPanel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.infoTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+.programInfo {
+    padding: var(--spacing-md);
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-md);
+}
+
+.programBadge {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    background: var(--color-red);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-sm);
+    animation: pulse 2s infinite;
+}
+
+.programName {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+}
+
+.programTime {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.stats {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.stat {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-md);
+}
+
+.statIcon {
+    font-size: 2rem;
+}
+
+.statValue {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.statLabel {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.platforms {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.platformsTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+.platformList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.platformBtn {
+    padding: 0.75rem;
+    background: var(--color-bg-tertiary);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-sm);
+    text-align: center;
+    font-weight: 600;
+    transition: all var(--transition-normal);
+}
+
+.platformBtn:hover {
+    background: var(--gradient-primary);
+    color: var(--color-bg-primary);
+    border-color: transparent;
+    transform: translateX(5px);
+}
+
+@media (max-width: 1024px) {
+    .videoWrapper {
+        grid-template-columns: 1fr;
+    }
+}
