@@ -3,38 +3,39 @@ import styles from './NewsSection.module.css';
 
 const newsArticles = [
     {
-        id: 1,
+        id: 'ethio-business',
         title: 'Ethio Business',
-        titleAm: 'የኢትዮጵያ ቢዝነስ',
+        titleAm: 'ኢትዮ ቢዝነስ',
         excerpt: 'ኢትዮጵያ የቡና መገኛና የቡና አምራች ሀገር ሆና የሚገባትን የገበያ ድርሻ አለመያዟ ተደጋግሞ የሚነሳ ጉዳይ...',
         category: 'Business',
         date: 'November 24, 2025',
         author: 'admin',
+        featured: true
     },
     {
-        id: 2,
+        id: 'ethiopian-airlines-athens',
         title: 'የአየር መንገዱ የአቴንስ በረራ ከፍ ይላል ተባለ',
-        excerpt: 'Ethiopian Airlines is set to increase flight frequency to Athens...',
+        excerpt: 'Ethiopian Airlines is set to increase flight frequency to Athens as demand grows...',
         category: 'International',
         date: 'September 18, 2024',
-        author: 'Frehiwot',
+        author: 'Frehiwot'
     },
     {
-        id: 3,
+        id: 'covid-variants',
         title: 'የኮቪድ ዳግም መከሰት',
         excerpt: 'Health officials report new COVID-19 variants emerging in the region...',
-        category: 'Ethiopia',
+        category: 'Health',
         date: 'September 18, 2024',
-        author: 'Frehiwot',
+        author: 'Frehiwot'
     },
     {
-        id: 4,
+        id: 'flu-illness',
         title: 'የሰሞኑ ጉንፋን መሰል በሽታ',
         excerpt: 'Recent flu-like illness spreading across the region requires attention...',
         category: 'Health',
         date: 'September 18, 2024',
-        author: 'Frehiwot',
-    },
+        author: 'Frehiwot'
+    }
 ];
 
 export default function NewsSection() {
@@ -50,38 +51,72 @@ export default function NewsSection() {
                     </p>
                 </div>
 
-                <div className={styles.grid}>
-                    {newsArticles.map((article, index) => (
-                        <article
-                            key={article.id}
-                            className={styles.card}
-                            style={{ animationDelay: `${index * 0.1}s` }}
-                        >
-                            <div className={styles.cardHeader}>
-                                <span className={`${styles.badge} ${styles[article.category.toLowerCase()]}`}>
-                                    {article.category}
-                                </span>
-                                <time className={styles.date}>{article.date}</time>
-                            </div>
-
-                            <h3 className={styles.cardTitle}>{article.title}</h3>
-                            {article.titleAm && (
-                                <p className={styles.titleAm}>{article.titleAm}</p>
-                            )}
-
-                            <p className={styles.excerpt}>{article.excerpt}</p>
-
-                            <div className={styles.cardFooter}>
-                                <span className={styles.author}>By {article.author}</span>
-                                <Link href={`/news/${article.id}`} className={styles.readMore}>
-                                    Read More
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                                        <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="2" fill="none" />
-                                    </svg>
-                                </Link>
+                <div className={styles.newsLayout}>
+                    {/* Featured Article */}
+                    {newsArticles.filter(article => article.featured).map((article) => (
+                        <article key={article.id} className={styles.featuredArticle}>
+                            <div className={styles.featuredContent}>
+                                <div className={styles.articleMeta}>
+                                    <span className={`${styles.badge} ${styles[article.category.toLowerCase()]}`}>
+                                        {article.category}
+                                    </span>
+                                    <time className={styles.date}>{article.date}</time>
+                                </div>
+                                
+                                <h3 className={styles.featuredTitle}>{article.title}</h3>
+                                {article.titleAm && (
+                                    <p className={styles.titleAm}>{article.titleAm}</p>
+                                )}
+                                
+                                <p className={styles.excerpt}>{article.excerpt}</p>
+                                
+                                <div className={styles.articleFooter}>
+                                    <span className={styles.author}>By {article.author}</span>
+                                    <Link href={`/news/${article.id}`} className={styles.readMore}>
+                                        Read More
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                            <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="2" fill="none" />
+                                        </svg>
+                                    </Link>
+                                </div>
                             </div>
                         </article>
                     ))}
+                    
+                    {/* Other Articles */}
+                    <div className={styles.otherArticles}>
+                        {newsArticles.filter(article => !article.featured).map((article, index) => (
+                            <article
+                                key={article.id}
+                                className={styles.card}
+                                style={{ animationDelay: `${index * 0.1}s` }}
+                            >
+                                <div className={styles.cardHeader}>
+                                    <span className={`${styles.badge} ${styles[article.category.toLowerCase()]}`}>
+                                        {article.category}
+                                    </span>
+                                    <time className={styles.date}>{article.date}</time>
+                                </div>
+
+                                <h3 className={styles.cardTitle}>{article.title}</h3>
+                                {article.titleAm && (
+                                    <p className={styles.titleAm}>{article.titleAm}</p>
+                                )}
+
+                                <p className={styles.excerpt}>{article.excerpt}</p>
+
+                                <div className={styles.cardFooter}>
+                                    <span className={styles.author}>By {article.author}</span>
+                                    <Link href={`/news/${article.id}`} className={styles.readMore}>
+                                        Read More
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                            <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="2" fill="none" />
+                                        </svg>
+                                    </Link>
+                                </div>
+                            </article>
+                        ))}
+                    </div>
                 </div>
 
                 <div className={styles.viewAll}>

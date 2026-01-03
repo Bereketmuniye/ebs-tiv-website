@@ -32,7 +32,84 @@
     color: var(--color-text-secondary);
 }
 
-.grid {
+.platformsGrid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.featuredPlatforms {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.featuredCard {
+    position: relative;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    transition: all var(--transition-normal);
+    animation: scaleIn 0.5s ease-out backwards;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.featuredCard::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    z-index: -1;
+}
+
+.featuredCard:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-glow-yellow);
+    border-color: transparent;
+}
+
+.featuredCard:hover::before {
+    opacity: 0.1;
+}
+
+.featuredIcon {
+    font-size: 3rem;
+    transition: transform var(--transition-normal);
+    flex-shrink: 0;
+}
+
+.featuredCard:hover .featuredIcon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.featuredContent {
+    flex: 1;
+    text-align: left;
+}
+
+.featuredName {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.featuredDescription {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.otherPlatforms {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--spacing-lg);
@@ -109,9 +186,37 @@
     transform: translateX(0);
 }
 
-@media (max-width: 640px) {
-    .grid {
+@media (max-width: 768px) {
+    .featuredPlatforms {
         grid-template-columns: 1fr;
+    }
+
+    .featuredCard {
+        padding: var(--spacing-lg);
+    }
+
+    .featuredName {
+        font-size: 1.25rem;
+    }
+
+    .otherPlatforms {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .featuredCard {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-md);
+    }
+
+    .featuredContent {
+        text-align: center;
+    }
+
+    .otherPlatforms {
+        grid-template-columns: 1fr;
     }
 }

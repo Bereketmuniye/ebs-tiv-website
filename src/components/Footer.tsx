@@ -23,15 +23,26 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Quick Links */}
+                    {/* Channels */}
                     <div className={styles.section}>
-                        <h4 className={styles.sectionTitle}>Quick Links</h4>
+                        <h4 className={styles.sectionTitle}>Channels</h4>
                         <ul className={styles.links}>
-                            <li><Link href="/">Home</Link></li>
-                            <li><Link href="/shows">Shows</Link></li>
-                            <li><Link href="/news">News</Link></li>
-                            <li><Link href="/live">Live TV</Link></li>
-                            <li><Link href="/schedule">Schedule</Link></li>
+                            <li><Link href="/ebs">EBS</Link></li>
+                            <li><Link href="/ebs-musika">EBS Musika</Link></li>
+                            <li><Link href="/ebs-cinema">EBS Cinema</Link></li>
+                            <li><Link href="https://live.ebstv.tv/">EBS Live</Link></li>
+                        </ul>
+                    </div>
+
+                    {/* Popular Shows */}
+                    <div className={styles.section}>
+                        <h4 className={styles.sectionTitle}>Popular Shows</h4>
+                        <ul className={styles.links}>
+                            <li><Link href="/shows/20-30">20 – 30</Link></li>
+                            <li><Link href="/shows/discover-ethiopia">Discover Ethiopia</Link></li>
+                            <li><Link href="/shows/ethio-business">Ethio Business</Link></li>
+                            <li><Link href="/shows/tizitachin">Tizitachin</Link></li>
+                            <li><Link href="/shows/ye-beteseb-chewata">Ye Beteseb Chewata</Link></li>
                         </ul>
                     </div>
 
@@ -39,11 +50,12 @@ export default function Footer() {
                     <div className={styles.section}>
                         <h4 className={styles.sectionTitle}>Information</h4>
                         <ul className={styles.links}>
-                            <li><Link href="/about">About Us</Link></li>
-                            <li><Link href="/advertise">Advertise</Link></li>
-                            <li><Link href="/privacy">Privacy & Cookie</Link></li>
-                            <li><Link href="/terms">Terms & Conditions</Link></li>
+                            <li><Link href="/schedule">Schedule</Link></li>
+                            <li><Link href="/smsguide">SMS Guide</Link></li>
                             <li><Link href="/contact">Contact Us</Link></li>
+                            <li><Link href="/advertise">Advertise Here</Link></li>
+                            <li><Link href="/privacy">Privacy Policy</Link></li>
+                            <li><Link href="/terms">Terms & Conditions</Link></li>
                         </ul>
                     </div>
 
@@ -64,6 +76,10 @@ export default function Footer() {
                                 <span>Roku Devices</span>
                             </li>
                             <li className={styles.platform}>
+                                <span className={styles.platformIcon}>▶️</span>
+                                <span>YouTube</span>
+                            </li>
+                            <li className={styles.platform}>
                                 <span className={styles.platformIcon}>💻</span>
                                 <span>Online Live Stream</span>
                             </li>
@@ -73,12 +89,23 @@ export default function Footer() {
 
                 {/* Bottom Bar */}
                 <div className={styles.bottom}>
-                    <p className={styles.copyright}>
-                        © {new Date().getFullYear()} EBS TV. All rights reserved.
-                    </p>
-                    <p className={styles.sms}>
-                        Get updates via SMS: Send "A" to <span className={styles.highlight}>7696</span>
-                    </p>
+                    <div className={styles.bottomContent}>
+                        <p className={styles.copyright}>
+                            © {new Date().getFullYear()} EBS TV. All rights reserved.
+                        </p>
+                        <div className={styles.bottomLinks}>
+                            <Link href="/privacy">Privacy Policy</Link>
+                            <span className={styles.separator}>|</span>
+                            <Link href="/terms">Terms & Conditions</Link>
+                            <span className={styles.separator}>|</span>
+                            <Link href="/contact">Contact Us</Link>
+                        </div>
+                    </div>
+                    <div className={styles.smsSection}>
+                        <p className={styles.sms}>
+                            Get EBS TV updates via SMS: Send "A" to <span className={styles.highlight}>7696</span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </footer>

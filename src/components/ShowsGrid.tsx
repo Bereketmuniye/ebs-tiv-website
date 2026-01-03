@@ -4,34 +4,131 @@ import styles from './ShowsGrid.module.css';
 
 const shows = [
     {
-        id: 1,
-        title: 'በስንቱ',
-        titleEn: 'Besntu',
-        description: 'Popular Ethiopian drama series airing every Thursday at 3:00 PM',
-        schedule: 'Thursday 3:00 PM',
-        category: 'Drama',
+        id: '20-30',
+        title: '20 – 30',
+        titleEn: 'ሀያ – ሰላሳ',
+        description: 'Popular youth show focusing on the 20-30 age demographic',
+        category: 'Youth Show',
+        schedule: 'Weekly',
+        gradient: 'linear-gradient(135deg, #2D882D, #FBB917)'
     },
     {
-        id: 2,
-        title: 'ትዝታችን',
-        titleEn: 'Tizitachin',
-        description: 'A nostalgic journey through Ethiopian memories and culture',
+        id: 'discover-ethiopia',
+        title: 'Discover Ethiopia',
+        titleEn: 'ኢትዮጵያን እንወቅ',
+        description: 'Explore the beauty, culture, and heritage of Ethiopia',
+        category: 'Documentary',
+        schedule: 'Weekly',
+        gradient: 'linear-gradient(135deg, #FBB917, #DA121A)'
+    },
+    {
+        id: 'ebs-sport',
+        title: 'EBS Sport',
+        titleEn: 'ኢቢኤስ ስፖርት',
+        description: 'Comprehensive sports coverage and analysis',
+        category: 'Sports',
+        schedule: 'Daily',
+        gradient: 'linear-gradient(135deg, #DA121A, #2D882D)'
+    },
+    {
+        id: 'ehudin-be-ebs',
+        title: 'Ehudin be EBS',
+        titleEn: 'እሁድን በኢቢኤስ',
+        description: 'Sunday special programming and entertainment',
         category: 'Entertainment',
+        schedule: 'Sunday',
+        gradient: 'linear-gradient(135deg, #2D882D, #DA121A)'
     },
     {
-        id: 3,
-        title: 'የቤተሰብ ጨዋታ',
-        titleEn: 'Ye Beteseb Chewata',
-        description: 'Fun family game show bringing families together',
+        id: 'ethio-business',
+        title: 'Ethio Business',
+        titleEn: 'ኢትዮ ቢዝነስ',
+        description: 'Business news and economic analysis',
+        category: 'Business',
+        schedule: 'Weekly',
+        gradient: 'linear-gradient(135deg, #FBB917, #2D882D)'
+    },
+    {
+        id: 'ethiopis',
+        title: 'Ethiopis',
+        titleEn: 'ኢትዮጲስ',
+        description: 'Cultural and social issues discussion program',
+        category: 'Talk Show',
+        schedule: 'Weekly',
+        gradient: 'linear-gradient(135deg, #DA121A, #FBB917)'
+    },
+    {
+        id: 'helen-show',
+        title: 'Helen Show',
+        titleEn: 'ሄለን ሾው',
+        description: 'Talk show hosted by Helen with celebrity interviews',
+        category: 'Talk Show',
+        schedule: 'Weekly',
+        gradient: 'linear-gradient(135deg, #2D882D, #FBB917)'
+    },
+    {
+        id: 'kidamen-keseat',
+        title: 'Kidamen keseat',
+        titleEn: 'ቅዳሜን ከሰዓት',
+        description: 'Weekend morning show with news and entertainment',
+        category: 'Weekend Show',
+        schedule: 'Saturday',
+        gradient: 'linear-gradient(135deg, #FBB917, #DA121A)'
+    },
+    {
+        id: 'new-life',
+        title: 'New Life',
+        titleEn: 'አዲስ ሂወት',
+        description: 'Inspirational and lifestyle programming',
+        category: 'Lifestyle',
+        schedule: 'Weekly',
+        gradient: 'linear-gradient(135deg, #DA121A, #2D882D)'
+    },
+    {
+        id: 'seyifu-on-ebs',
+        title: 'Seyifu On EBS',
+        titleEn: 'ሰይፉ በኢቢኤስ',
+        description: 'Entertainment show hosted by Seyifu',
+        category: 'Entertainment',
+        schedule: 'Weekly',
+        gradient: 'linear-gradient(135deg, #2D882D, #FBB917)'
+    },
+    {
+        id: 'tech-talk-with-solomon',
+        title: 'Tech Talk With Solomon',
+        titleEn: '',
+        description: 'Technology discussions and digital trends',
+        category: 'Technology',
+        schedule: 'Weekly',
+        gradient: 'linear-gradient(135deg, #FBB917, #DA121A)'
+    },
+    {
+        id: 'tizitachin',
+        title: 'Tizitachin',
+        titleEn: 'ትዝታችን',
+        description: 'Nostalgic journey through Ethiopian memories',
+        category: 'Entertainment',
+        schedule: 'Weekly',
+        gradient: 'linear-gradient(135deg, #DA121A, #2D882D)'
+    },
+    {
+        id: 'ye-beteseb-chewata',
+        title: 'Ye beteseb Chewata',
+        titleEn: 'የቤተሰብ ጨዋታ',
+        description: 'Family game show bringing families together',
         category: 'Game Show',
+        schedule: 'Weekly',
+        gradient: 'linear-gradient(135deg, #2D882D, #FBB917)'
     },
     {
-        id: 4,
-        title: 'EBS Music',
-        titleEn: 'Reggae & Afro Beat',
-        description: 'The best of Ethiopian and African music content',
+        id: 'ebs-music-reggae-afro-beat',
+        title: 'Ebs Music reggae & Afro Beat',
+        titleEn: 'ኢቢኤስ ሙዚቃ ሬጌ እና አፍሮ ቢት',
+        description: 'The best of Ethiopian reggae and Afrobeat music',
         category: 'Music',
-    },
+        schedule: 'Weekly',
+        gradient: 'linear-gradient(135deg, #FBB917, #DA121A)'
+    }
 ];
 
 export default function ShowsGrid() {
@@ -55,7 +152,7 @@ export default function ShowsGrid() {
                             style={{ animationDelay: `${index * 0.1}s` }}
                         >
                             <div className={styles.cardImage}>
-                                <div className={styles.imagePlaceholder}>
+                                <div className={styles.imagePlaceholder} style={{background: show.gradient}}>
                                     <div className={styles.playOverlay}>
                                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
                                             <circle cx="24" cy="24" r="24" fill="rgba(255,255,255,0.2)" />
