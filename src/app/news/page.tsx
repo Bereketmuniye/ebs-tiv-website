@@ -99,8 +99,8 @@ export default function NewsPage() {
                                 </div>
 
                                 <h3 className={styles.cardTitle}>{article.title}</h3>
-                                {article.titleEn && article.titleAm && (
-                                    <p className={styles.titleAlt}>{article.titleEn || article.titleAm}</p>
+                                {article.titleEn && (
+                                    <p className={styles.titleAlt}>{article.titleEn}</p>
                                 )}
 
                                 <p className={styles.excerpt}>{article.excerpt}</p>

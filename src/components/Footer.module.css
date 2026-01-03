@@ -1,6 +1,6 @@
 .footer {
-    background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
-    border-top: 1px solid var(--glass-border);
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
     padding: var(--spacing-2xl) 0 var(--spacing-lg);
     margin-top: var(--spacing-2xl);
 }
@@ -32,7 +32,7 @@
 }
 
 .gradientText {
-    background: var(--gradient-primary);
+    background: linear-gradient(135deg, #2c3e50, #34495e);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -56,17 +56,17 @@
     justify-content: center;
     width: 40px;
     height: 40px;
-    background: var(--color-bg-tertiary);
+    background: #e9ecef;
     border-radius: var(--radius-sm);
-    color: var(--color-text-primary);
+    color: #495057;
     transition: all var(--transition-normal);
 }
 
 .socialLink:hover {
-    background: var(--gradient-primary);
+    background: #2c3e50;
     color: var(--color-bg-primary);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-glow-yellow);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(44, 62, 80, 0.3);
 }
 
 .sectionTitle {
@@ -91,8 +91,8 @@
 }
 
 .links li a:hover {
-    color: var(--color-yellow);
-    transform: translateX(5px);
+    color: #2c3e50;
+    transform: translateX(3px);
 }
 
 .platforms {
@@ -119,8 +119,8 @@
     justify-content: space-between;
     align-items: flex-start;
     padding-top: var(--spacing-lg);
-    border-top: 1px solid var(--glass-border);
-    color: var(--color-text-muted);
+    border-top: 1px solid #e9ecef;
+    color: #6c757d;
     font-size: 0.9rem;
     gap: var(--spacing-lg);
 }
@@ -139,16 +139,16 @@
 }
 
 .bottomLinks a {
-    color: var(--color-text-muted);
+    color: #6c757d;
     transition: color var(--transition-fast);
 }
 
 .bottomLinks a:hover {
-    color: var(--color-yellow);
+    color: #2c3e50;
 }
 
 .separator {
-    color: var(--color-text-muted);
+    color: #6c757d;
     opacity: 0.5;
 }
 
@@ -165,7 +165,7 @@
 }
 
 .highlight {
-    color: var(--color-yellow);
+    color: #2c3e50;
     font-weight: 600;
 }
 
