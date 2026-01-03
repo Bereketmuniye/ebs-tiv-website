@@ -3,58 +3,64 @@ import styles from './page.module.css';
 
 const shows = [
     {
-        id: 1,
-        title: 'በስንቱ',
-        titleEn: 'Besntu',
-        description: 'Popular Ethiopian drama series that airs every Thursday at 3:00 PM. A compelling story that has captured the hearts of Ethiopian audiences nationwide.',
-        schedule: 'Thursday 3:00 PM',
-        category: 'Drama',
-        status: 'New Episodes',
+        id: '20-30',
+        title: '20 – 30',
+        titleEn: 'ሀያ – ሰላሳ',
+        description: 'Popular youth show focusing on the 20-30 age demographic',
+        schedule: 'Weekly',
+        category: 'Youth Show',
+        status: 'Popular',
+        videoId: 'KJ_u-RgpFNc'
     },
     {
-        id: 2,
-        title: 'ትዝታችን',
-        titleEn: 'Tizitachin',
-        description: 'A nostalgic journey through Ethiopian memories, culture, and heritage. Bringing back cherished moments and celebrating our shared history.',
+        id: 'discover-ethiopia',
+        title: 'Discover Ethiopia',
+        titleEn: 'ኢትዮጵያን እንወቅ',
+        description: 'Explore the beauty, culture, and heritage of Ethiopia',
+        schedule: 'Weekly',
+        category: 'Documentary',
+        status: 'New Episodes',
+        videoId: 'yBbbAJoy4Bg'
+    },
+    {
+        id: 'ebs-sport',
+        title: 'EBS Sport',
+        titleEn: 'ኢቢኤስ ስፖርት',
+        description: 'Comprehensive sports coverage and analysis',
+        schedule: 'Daily',
+        category: 'Sports',
+        status: 'Live',
+        videoId: '8-7UrEvvgHQ'
+    },
+    {
+        id: 'ehudin-be-ebs',
+        title: 'Ehudin be EBS',
+        titleEn: 'እሁድን በኢቢኤስ',
+        description: 'Sunday special programming and entertainment',
+        schedule: 'Sunday',
+        category: 'Entertainment',
+        status: 'Popular',
+        videoId: 'Y-imVXeRtWw'
+    },
+    {
+        id: 'ethio-business',
+        title: 'Ethio Business',
+        titleEn: 'ኢትዮ ቢዝነስ',
+        description: 'Business news and economic analysis',
+        schedule: 'Weekly',
+        category: 'Business',
+        status: 'Live',
+        videoId: 'hhiuFM2n8r4'
+    },
+    {
+        id: 'tizitachin',
+        title: 'Tizitachin',
+        titleEn: 'ትዝታችን',
+        description: 'Nostalgic journey through Ethiopian memories',
         schedule: 'Weekly',
         category: 'Entertainment',
         status: 'Ongoing',
-    },
-    {
-        id: 3,
-        title: 'የቤተሰብ ጨዋታ',
-        titleEn: 'Ye Beteseb Chewata',
-        description: 'Fun family game show that brings Ethiopian families together for exciting challenges and heartwarming moments.',
-        schedule: 'Sundays',
-        category: 'Game Show',
-        status: 'Popular',
-    },
-    {
-        id: 4,
-        title: 'EBS Music',
-        titleEn: 'Reggae & Afro Beat',
-        description: 'The best of Ethiopian and African music content featuring reggae and afro beat performances and interviews.',
-        schedule: 'Daily',
-        category: 'Music',
-        status: 'Daily Show',
-    },
-    {
-        id: 5,
-        title: 'Ethio Business',
-        titleEn: 'Business News',
-        description: 'Comprehensive coverage of Ethiopian business news, market updates, and economic developments.',
-        schedule: 'Weekdays',
-        category: 'Business',
-        status: 'Live',
-    },
-    {
-        id: 6,
-        title: 'የዕለት ዜና',
-        titleEn: 'Daily News',
-        description: 'Stay informed with the latest news from Ethiopia and around the world. Comprehensive news coverage you can trust.',
-        schedule: 'Daily',
-        category: 'News',
-        status: 'Live',
+        videoId: 'yBbbAJoy4Bg'
     },
 ];
 
@@ -86,13 +92,15 @@ export default function ShowsPage() {
                         {shows.map((show) => (
                             <div key={show.id} className={styles.card}>
                                 <div className={styles.cardImage}>
-                                    <div className={styles.imagePlaceholder}>
-                                        <div className={styles.playOverlay}>
-                                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-                                                <circle cx="32" cy="32" r="32" fill="rgba(255,255,255,0.2)" />
-                                                <path d="M24 18L44 32L24 46V18Z" fill="white" />
-                                            </svg>
-                                        </div>
+                                    <div className={styles.videoContainer}>
+                                        <iframe
+                                            src={`https://www.youtube.com/embed/${show.videoId}`}
+                                            title={show.title}
+                                            frameBorder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowFullScreen
+                                            className={styles.video}
+                                        />
                                     </div>
                                     <div className={styles.badges}>
                                         <span className={styles.categoryBadge}>{show.category}</span>

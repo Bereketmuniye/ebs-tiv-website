@@ -10,7 +10,7 @@ const shows = [
         description: 'Popular youth show focusing on the 20-30 age demographic',
         category: 'Youth Show',
         schedule: 'Weekly',
-        gradient: 'linear-gradient(135deg, #2D882D, #FBB917)'
+        videoId: 'KJ_u-RgpFNc'
     },
     {
         id: 'discover-ethiopia',
@@ -19,7 +19,7 @@ const shows = [
         description: 'Explore the beauty, culture, and heritage of Ethiopia',
         category: 'Documentary',
         schedule: 'Weekly',
-        gradient: 'linear-gradient(135deg, #FBB917, #DA121A)'
+        videoId: 'yBbbAJoy4Bg'
     },
     {
         id: 'ebs-sport',
@@ -28,7 +28,7 @@ const shows = [
         description: 'Comprehensive sports coverage and analysis',
         category: 'Sports',
         schedule: 'Daily',
-        gradient: 'linear-gradient(135deg, #DA121A, #2D882D)'
+        videoId: '8-7UrEvvgHQ'
     },
     {
         id: 'ehudin-be-ebs',
@@ -37,7 +37,7 @@ const shows = [
         description: 'Sunday special programming and entertainment',
         category: 'Entertainment',
         schedule: 'Sunday',
-        gradient: 'linear-gradient(135deg, #2D882D, #DA121A)'
+        videoId: 'Y-imVXeRtWw'
     },
     {
         id: 'ethio-business',
@@ -46,7 +46,7 @@ const shows = [
         description: 'Business news and economic analysis',
         category: 'Business',
         schedule: 'Weekly',
-        gradient: 'linear-gradient(135deg, #FBB917, #2D882D)'
+        videoId: 'hhiuFM2n8r4'
     },
     {
         id: 'ethiopis',
@@ -55,7 +55,7 @@ const shows = [
         description: 'Cultural and social issues discussion program',
         category: 'Talk Show',
         schedule: 'Weekly',
-        gradient: 'linear-gradient(135deg, #DA121A, #FBB917)'
+        videoId: '8-7UrEvvgHQ'
     },
     {
         id: 'helen-show',
@@ -64,7 +64,7 @@ const shows = [
         description: 'Talk show hosted by Helen with celebrity interviews',
         category: 'Talk Show',
         schedule: 'Weekly',
-        gradient: 'linear-gradient(135deg, #2D882D, #FBB917)'
+        videoId: 'yBbbAJoy4Bg'
     },
     {
         id: 'kidamen-keseat',
@@ -73,7 +73,7 @@ const shows = [
         description: 'Weekend morning show with news and entertainment',
         category: 'Weekend Show',
         schedule: 'Saturday',
-        gradient: 'linear-gradient(135deg, #FBB917, #DA121A)'
+        videoId: 'KJ_u-RgpFNc'
     },
     {
         id: 'new-life',
@@ -82,7 +82,7 @@ const shows = [
         description: 'Inspirational and lifestyle programming',
         category: 'Lifestyle',
         schedule: 'Weekly',
-        gradient: 'linear-gradient(135deg, #DA121A, #2D882D)'
+        videoId: 'Y-imVXeRtWw'
     },
     {
         id: 'seyifu-on-ebs',
@@ -91,7 +91,7 @@ const shows = [
         description: 'Entertainment show hosted by Seyifu',
         category: 'Entertainment',
         schedule: 'Weekly',
-        gradient: 'linear-gradient(135deg, #2D882D, #FBB917)'
+        videoId: 'hhiuFM2n8r4'
     },
     {
         id: 'tech-talk-with-solomon',
@@ -100,7 +100,7 @@ const shows = [
         description: 'Technology discussions and digital trends',
         category: 'Technology',
         schedule: 'Weekly',
-        gradient: 'linear-gradient(135deg, #FBB917, #DA121A)'
+        videoId: '8-7UrEvvgHQ'
     },
     {
         id: 'tizitachin',
@@ -109,7 +109,7 @@ const shows = [
         description: 'Nostalgic journey through Ethiopian memories',
         category: 'Entertainment',
         schedule: 'Weekly',
-        gradient: 'linear-gradient(135deg, #DA121A, #2D882D)'
+        videoId: 'yBbbAJoy4Bg'
     },
     {
         id: 'ye-beteseb-chewata',
@@ -118,7 +118,7 @@ const shows = [
         description: 'Family game show bringing families together',
         category: 'Game Show',
         schedule: 'Weekly',
-        gradient: 'linear-gradient(135deg, #2D882D, #FBB917)'
+        videoId: 'KJ_u-RgpFNc'
     },
     {
         id: 'ebs-music-reggae-afro-beat',
@@ -127,7 +127,7 @@ const shows = [
         description: 'The best of Ethiopian reggae and Afrobeat music',
         category: 'Music',
         schedule: 'Weekly',
-        gradient: 'linear-gradient(135deg, #FBB917, #DA121A)'
+        videoId: 'Y-imVXeRtWw'
     }
 ];
 
@@ -152,13 +152,15 @@ export default function ShowsGrid() {
                             style={{ animationDelay: `${index * 0.1}s` }}
                         >
                             <div className={styles.cardImage}>
-                                <div className={styles.imagePlaceholder} style={{background: show.gradient}}>
-                                    <div className={styles.playOverlay}>
-                                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                                            <circle cx="24" cy="24" r="24" fill="rgba(255,255,255,0.2)" />
-                                            <path d="M18 14L34 24L18 34V14Z" fill="white" />
-                                        </svg>
-                                    </div>
+                                <div className={styles.videoContainer}>
+                                    <iframe
+                                        src={`https://www.youtube.com/embed/${show.videoId}`}
+                                        title={show.title}
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen
+                                        className={styles.video}
+                                    />
                                 </div>
                                 <span className={styles.category}>{show.category}</span>
                             </div>

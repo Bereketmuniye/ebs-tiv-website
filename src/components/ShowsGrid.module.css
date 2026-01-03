@@ -34,7 +34,7 @@
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: var(--spacing-lg);
     margin-bottom: var(--spacing-xl);
 }
@@ -62,6 +62,19 @@
     aspect-ratio: 16 / 9;
     background: linear-gradient(135deg, var(--color-bg-secondary), var(--color-bg-tertiary));
     overflow: hidden;
+    height: 280px;
+}
+
+.videoContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .imagePlaceholder {
@@ -88,67 +101,75 @@
     position: absolute;
     top: var(--spacing-sm);
     right: var(--spacing-sm);
-    padding: 0.35rem 0.75rem;
-    background: rgba(45, 136, 45, 0.9);
+    padding: 0.3rem 0.6rem;
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(10px);
     color: white;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 600;
     border-radius: var(--radius-sm);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .cardContent {
-    padding: var(--spacing-md);
+    padding: var(--spacing-sm);
     flex: 1;
+    min-height: 120px;
 }
 
 .cardTitle {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: 0.25rem;
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.15rem;
 }
 
 .titleEn {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--color-text-secondary);
     font-weight: 500;
 }
 
 .cardDescription {
     color: var(--color-text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: var(--spacing-sm);
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .schedule {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    color: var(--color-yellow);
-    font-size: 0.9rem;
+    gap: 0.4rem;
+    color: var(--color-text-secondary);
+    font-size: 0.8rem;
     font-weight: 500;
 }
 
 .cardFooter {
-    padding: 0 var(--spacing-md) var(--spacing-md);
+    padding: 0 var(--spacing-sm) var(--spacing-sm);
 }
 
 .watchBtn {
     display: block;
     width: 100%;
     text-align: center;
-    padding: 0.75rem;
-    background: var(--gradient-primary);
-    color: var(--color-bg-primary);
+    padding: 0.6rem;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
     font-weight: 600;
+    font-size: 0.9rem;
     border-radius: var(--radius-sm);
     transition: all var(--transition-normal);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .watchBtn:hover {
